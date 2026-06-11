@@ -1,4 +1,4 @@
-![Logo](onlineBN.png)
+![unach](Unach.png)
 
 # Universidad Nacional de Chimborazo
 
