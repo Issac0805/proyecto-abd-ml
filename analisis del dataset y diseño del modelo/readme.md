@@ -1,4 +1,4 @@
-# **Normalización
+# **Normalización**
 
 La Base de datos ha sido normalizada
 
@@ -53,26 +53,43 @@ Se eliminaron dependencias transitivas:
     ✔ Resultado: Modelo totalmente normalizado
 
 **🗃️ Diseño de Tablas**
+
 🔹 Hoteles
-Almacena el tipo de hotel
+
+- Almacena el tipo de hotel
+
 🔹 Clientes
-Contiene información del cliente y su historial
+
+- Contiene información del cliente y su historial
+
 🔹 CanalesReserva
-Define el segmento y canal de la reserva
+- Define el segmento y canal de la reserva
+
 🔹 Habitaciones
-Tipos de habitaciones reservadas y asignadas
+
+- Tipos de habitaciones reservadas y asignadas
+
 🔹 EstadosReserva
-Indica si la reserva fue cancelada
+
+- Indica si la reserva fue cancelada
+
 🔹 FechasLlegada
-Información temporal de la llegada
+
+- Información temporal de la llegada
+
 🔹 Reservas
-Tabla principal que contiene la información de cada reserva
+
+- Tabla principal que contiene la información de cada reserva
 
 **🔑 Llaves**
+
 🔹 Llaves Primarias
-Cada tabla contiene una clave primaria (IDENTITY)
+
+    Cada tabla contiene una clave primaria (IDENTITY)
+
 🔹 Llaves Foráneas
-La tabla Reservas contiene:
+
+    La tabla Reservas contiene:
 
 - id_hotel → Hoteles
 - id_cliente → Clientes
