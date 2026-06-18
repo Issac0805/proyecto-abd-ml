@@ -3,6 +3,7 @@
 La Base de datos ha sido normalizada
 
 Se creó una segunda base:
+
     - HotelDB
 
 Esta base contiene el modelo relacional normalizado.
@@ -25,7 +26,7 @@ La tabla Reservas actúa como entidad central conectando todas las demás.
 
 Se aplicaron las siguientes formas normales:
 
-- ✅ Primera Forma Normal (1FN)
+**✅ Primera Forma Normal (1FN)**
 
 - Se eliminaron atributos multivaluados
 - Cada campo contiene un solo valor
@@ -33,7 +34,7 @@ Se aplicaron las siguientes formas normales:
 
     ✔ Resultado: Datos atómicos
 
-- ✅ Segunda Forma Normal (2FN)
+**✅ Segunda Forma Normal (2FN)**
 
 Se separaron dependencias parciales:
 
@@ -42,7 +43,7 @@ Se separaron dependencias parciales:
 
     ✔ Resultado: Reducción de redundancia
 
-- ✅ Tercera Forma Normal (3FN)
+**✅ Tercera Forma Normal (3FN)**
 
 Se eliminaron dependencias transitivas:
 
