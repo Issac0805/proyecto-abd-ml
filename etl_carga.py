@@ -2,7 +2,7 @@ import pandas as pd
 import pyodbc
 import os
 
-print("🚀 Iniciando ETL...")
+print(" Iniciando ETL...")
 
 # -----------------------------
 # CONEXIÓN A SQL SERVER
@@ -15,10 +15,10 @@ try:
         'Trusted_Connection=yes;'
     )
     cursor = conn.cursor()
-    print("✅ Conexión exitosa a SQL Server")
+    print(" Conexión exitosa a SQL Server")
 
 except Exception as e:
-    print("❌ Error al conectar:", e)
+    print(" Error al conectar:", e)
     exit()
 
 
@@ -29,20 +29,20 @@ try:
     ruta = os.path.join(os.path.dirname(__file__), 'database', 'hotel_bookings.csv')
     df = pd.read_csv(ruta)
 
-    print("✅ Dataset cargado correctamente")
-    print("📂 Ruta:", ruta)
-    print("📊 Filas y columnas:", df.shape)
+    print(" Dataset cargado correctamente")
+    print(" Ruta:", ruta)
+    print(" Filas y columnas:", df.shape)
     print(df.head())
 
 except Exception as e:
-    print("❌ Error al cargar CSV:", e)
+    print(" Error al cargar CSV:", e)
     exit()
 
 # -----------------------------
 # INSERTAR HOTELES
 # -----------------------------
 try:
-    print("🚀 Insertando hoteles...")
+    print(" Insertando hoteles...")
 
     hoteles = df['hotel'].drop_duplicates()
 
@@ -51,10 +51,10 @@ try:
 
     conn.commit()
 
-    print("✅ Hoteles insertados correctamente")
+    print(" Hoteles insertados correctamente")
 
 except Exception as e:
-    print("❌ Error al insertar hoteles:", e)
+    print(" Error al insertar hoteles:", e)
 
 # Crear DataFrame de clientes (usar columnas relevantes y eliminar duplicados)
 try:
@@ -63,7 +63,7 @@ try:
         'previous_cancellations', 'previous_bookings_not_canceled'
     ]].drop_duplicates().reset_index(drop=True)
 except Exception as e:
-    print("❌ Error al preparar clientes:", e)
+    print(" Error al preparar clientes:", e)
     clientes = pd.DataFrame(columns=[
         'country', 'customer_type', 'is_repeated_guest',
         'previous_cancellations', 'previous_bookings_not_canceled'
@@ -89,7 +89,7 @@ for _, fila in clientes.iterrows():
         continue
 
 conn.commit()
-print("✅ Clientes insertados correctamente")
+print(" Clientes insertados correctamente")
 
 # -----------------------------
 # CREAR DATAFRAME CANALES
@@ -118,10 +118,10 @@ try:
 
     conn.commit()
 
-    print("✅ Canales insertados correctamente")
+    print(" Canales insertados correctamente")
 
 except Exception as e:
-    print("❌ Error al insertar canales:", e)
+    print(" Error al insertar canales:", e)
 
 # -----------------------------
 # CREAR DATAFRAME HABITACIONES
@@ -153,7 +153,7 @@ try:
     print("✅ Habitaciones insertadas correctamente")
 
 except Exception as e:
-    print("❌ Error al insertar habitaciones:", e)
+    print(" Error al insertar habitaciones:", e)
 
 # -----------------------------
 # CREAR DATAFRAME ESTADOS
@@ -164,7 +164,7 @@ estados = df[['is_canceled']].drop_duplicates()
 # INSERTAR ESTADOS
 # -----------------------------
 try:
-    print("🚀 Insertando estados...")
+    print(" Insertando estados...")
 
     for _, fila in estados.iterrows():
         try:
@@ -182,7 +182,7 @@ try:
     print("✅ Estados insertados correctamente")
 
 except Exception as e:
-    print("❌ Error al insertar estados:", e)
+    print(" Error al insertar estados:", e)
 
 # -----------------------------
 # CREAR DATAFRAME FECHAS
@@ -219,10 +219,10 @@ try:
 
     conn.commit()
 
-    print("✅ Fechas insertadas correctamente")
+    print(" Fechas insertadas correctamente")
 
 except Exception as e:
-    print("❌ Error al insertar fechas:", e)
+    print(" Error al insertar fechas:", e)
 
 cursor.execute("SELECT id_hotel, nombre FROM Hoteles")
 map_hoteles = {row.nombre: row.id_hotel for row in cursor.fetchall()}
@@ -245,7 +245,7 @@ map_fechas = {
     for row in cursor.fetchall()
 }
 
-print("🚀 Insertando reservas...")
+print(" Insertando reservas...")
 
 for _, fila in df.iterrows():
     try:
@@ -288,4 +288,4 @@ for _, fila in df.iterrows():
 
 conn.commit()
 
-print("✅ Reservas insertadas correctamente")
+print(" Reservas insertadas correctamente")
