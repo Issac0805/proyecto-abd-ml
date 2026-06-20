@@ -144,3 +144,4 @@ SELECT TOP 10 * FROM Reservas;
 Se implementó un proceso ETL completo que automatiza la carga de datos hacia SQL Server, garantizando integridad, eficiencia y preparación para análisis avanzado.
 
 Este proceso permite que los datos estén listos para su uso en modelos de Machine Learning dentro del proyecto.
+""", ...)
