@@ -6,34 +6,34 @@ Hemos implementado la persistencia híbrida, específicamente en:
 
 •	Guardar los resultados de los experimentos de forma estructurada
 
-**¿Qué significa persistencia híbrida?**
+## **¿Qué significa persistencia híbrida?**
 
 “Persistencia híbrida es el uso de diferentes tipos de bases de datos para diferentes propósitos.”
 
-En este caso:
+*En este caso:*
 
 -	SQL Server → para datos estructurados (reservas, clientes, etc.)
 
 - MongoDB → para resultados del modelo de Machine Learning
 
-**🔹 ¿Qué hice exactamente?**
+## **🔹 ¿Qué hice exactamente?**
 
-*1. Conexión a MongoDB*
+**1. Conexión a MongoDB**
 
 Utilicé MongoDB Atlas (en la nube) para no instalar nada local.
 Python
 from pymongo import MongoClient
 client = MongoClient(uri)
 
-*2. Creación de base y colección*
+**2. Creación de base y colección**
 
 Se creó automáticamente:
 
--	Base de datos: HotelML
+- Base de datos: HotelML
 
--	Colección: experimentos_ml
+- Colección: experimentos_ml
 
-*3. Integración con Machine Learning*
+**3. Integración con Machine Learning**
 
 Después de que el modelo se entrena en Python:
 
@@ -41,22 +41,25 @@ Tomé sus resultados:
 
 - Accuracy
 
--	Precision
+- Precision
 
--	Recall
+- Recall
 
--	F1 Score
+- F1 Score
 
 **4. Construcción del documento JSON**
+
 Se creó un documento como este:
  
 **5. Almacenamiento en MongoDB**
 
-Python
-coleccion.insert_one(documento)
+Python:
+
+'coleccion.insert_one(documento)'
+
 Esto guarda automáticamente cada experimento
 
-**🔹 ¿Por qué usar MongoDB?**
+## **🔹 ¿Por qué usar MongoDB?**
 
 Porque:
 
