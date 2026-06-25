@@ -156,6 +156,6 @@ SELECT COUNT(*) AS total_segmentacion
 FROM dbo.vw_segmentacion_clientes;
 GO
 
-
+--
 
 
