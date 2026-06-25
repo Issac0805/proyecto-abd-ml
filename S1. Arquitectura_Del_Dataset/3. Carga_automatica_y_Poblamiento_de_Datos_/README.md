@@ -1,6 +1,6 @@
-# Carga Automática y Poblamiento de Datos
+**# Carga Automática y Poblamiento de Datos**
 
-## Descripción General
+**## Descripción General**
 
 En este componente del proyecto se desarrolló un proceso ETL (Extract, Transform, Load) utilizando Python, con el objetivo de cargar automáticamente el dataset de reservas hoteleras hacia SQL Server.
 
@@ -8,7 +8,7 @@ Se transformó un archivo CSV en una base de datos relacional normalizada, garan
 
 ---
 
-## Actividades realizadas
+**## Actividades realizadas**
 
 - Limpieza del dataset  
 - Implementación del proceso ETL  
@@ -17,7 +17,7 @@ Se transformó un archivo CSV en una base de datos relacional normalizada, garan
 
 ---
 
-## Herramientas utilizadas
+**## Herramientas utilizadas**
 
 - Pandas  
 - pyodbc  
@@ -25,9 +25,9 @@ Se transformó un archivo CSV en una base de datos relacional normalizada, garan
 
 ---
 
-## Proceso ETL
+**## Proceso ETL**
 
-### Extracción
+**### Extracción**
 
 Se carga el dataset desde CSV:
 
@@ -37,7 +37,7 @@ df = pd.read_csv(ruta)
 
 ---
 
-### Transformación
+**### Transformación**
 
 Se limpian y preparan los datos:
 
@@ -50,7 +50,7 @@ clientes = df[[
 
 ---
 
-### Carga
+**### Carga**
 
 Se insertan los datos en SQL Server mediante conexión con pyodbc:
 
@@ -75,7 +75,7 @@ VALUES (?, ?, ?, ?, ?)
 
 ---
 
-### Relación entre tablas (claves foráneas)
+**### Relación entre tablas (claves foráneas)**
 
 Para mantener la integridad referencial:
 
@@ -85,7 +85,7 @@ map_clientes = {(row.country, row.customer_type): row.id_cliente}
 
 ---
 
-## Creación de la base de datos
+**## Creación de la base de datos**
 
 Script SQL utilizado:
 
@@ -119,7 +119,7 @@ CREATE TABLE Reservas (
 
 ---
 
-## Validación de datos
+**## Validación de datos**
 
 ```sql
 SELECT COUNT(*) FROM Reservas;
@@ -129,7 +129,7 @@ SELECT TOP 10 * FROM Reservas;
 
 ---
 
-## Resultados obtenidos
+**## Resultados obtenidos**
 
 - Inserción correcta del dataset completo  
 - Base de datos poblada automáticamente  
@@ -137,7 +137,7 @@ SELECT TOP 10 * FROM Reservas;
 
 ---
 
-## Conclusión
+**## Conclusión**
 
 Se implementó un proceso ETL completo que automatiza la carga de datos hacia SQL Server, garantizando integridad, eficiencia y preparación para análisis avanzado.
 
