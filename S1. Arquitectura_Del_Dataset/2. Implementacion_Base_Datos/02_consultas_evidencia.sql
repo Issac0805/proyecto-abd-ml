@@ -84,4 +84,3 @@ AND i.name IS NOT NULL
 ORDER BY tabla, indice;
 GO
 
---
