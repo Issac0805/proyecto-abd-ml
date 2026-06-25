@@ -1,4 +1,4 @@
-﻿# Diagrama Entidad-Relacion
+﻿**# Diagrama Entidad-Relacion**
 
 Este diagrama representa el modelo relacional usado para la implementacion de la base de datos `HotelDB` en SQL Server.
 
@@ -74,7 +74,7 @@ erDiagram
     }
 ```
 
-## Cardinalidades
+**## Cardinalidades**
 
 - Un hotel puede tener muchas reservas.
 - Un cliente puede estar relacionado con muchas reservas.
