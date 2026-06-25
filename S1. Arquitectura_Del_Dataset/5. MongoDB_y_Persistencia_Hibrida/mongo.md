@@ -1,6 +1,9 @@
-INTEGRANTE 5
+# Persistencia Hibrida y conexion a Mongo DB
+
 A mí me correspondió implementar la persistencia híbrida, específicamente:
+
 •	Integrar el modelo de Machine Learning con una base de datos NoSQL (MongoDB)}
+
 •	Guardar los resultados de los experimentos de forma estructurada
 
 ¿Qué significa persistencia híbrida?
