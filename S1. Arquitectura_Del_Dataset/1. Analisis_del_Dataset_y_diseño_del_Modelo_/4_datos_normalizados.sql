@@ -138,3 +138,4 @@ JOIN HotelDB.dbo.FechasLlegada f
     AND r.arrival_date_day_of_month = f.arrival_date_day_of_month;
 
 
+--
