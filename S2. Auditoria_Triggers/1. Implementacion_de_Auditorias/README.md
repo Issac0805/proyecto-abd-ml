@@ -2,7 +2,9 @@
 
 **Hotel Booking Demand**
 
-- **Tema:** Predicción de cancelación de reservas hoteleras y segmentación de clientes mediante Machine Learning y persistencia híbrida SQL Server + MongoDB
+### **Tema:** 
+
+**Predicción de cancelación de reservas hoteleras y segmentación de clientes mediante Machine Learning y persistencia híbrida SQL Server + MongoDB**
 
 ---
 **Descripción general**  
